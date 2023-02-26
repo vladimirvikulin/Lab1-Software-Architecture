@@ -21,4 +21,8 @@ func main() {
             http.NotFound(w, r)
         }
     }
+	http.HandleFunc("/", handler)
+
+    fmt.Println("Listening on port 8795...")
+    http.ListenAndServe(":8795", nil)
 }
